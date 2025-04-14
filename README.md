@@ -60,5 +60,11 @@ pnpm install
 cp .env.example .env.local
 # Fill in the required credentials
 
+# Setup Prisma ORM
+pnpm prisma generate        # Generate Prisma Client
+pnpm prisma db push         # Push schema to the database
+# (Optional) Seed your database
+pnpm prisma db seed
+
 # Run the dev server
 pnpm dev
