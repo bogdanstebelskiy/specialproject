@@ -8,8 +8,11 @@ import noodleImage from '@/assets/noodle.png'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 export const Hero = () => {
+  const t = useTranslations('Home')
+
   const heroRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -27,7 +30,7 @@ export const Hero = () => {
           <div className="md:w-[478px]">
             <div className="tag">Soon Somewhere</div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter bg-gradient-to-b from-black to-[#595959] text-transparent bg-clip-text mt-6">
-              Discover the beauty of Ukraine
+              {t('title')}
             </h1>
             <p className="text-xl text-[#010D3E] tracking-tight mt-6">
               Welcome to Special Project, your gateway to unforgettable hiking

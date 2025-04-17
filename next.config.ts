@@ -1,8 +1,11 @@
 import type { NextConfig } from 'next'
 
+import createNextIntlPlugin from 'next-intl/plugin'
+
 const nextConfig: NextConfig = {
   webpack(config) {
     // Grab the existing rule that handles SVG imports
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-expect-error
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg'),
@@ -40,4 +43,5 @@ const nextConfig: NextConfig = {
   },
 }
 
-export default nextConfig
+const withNextIntl = createNextIntlPlugin()
+export default withNextIntl(nextConfig)
