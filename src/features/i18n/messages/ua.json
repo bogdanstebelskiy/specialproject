@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "title": "Відкрийте красу України"
+  },
+  "LocaleSwitcher": {
+    "label": "Змінити мову",
+    "locale": "{locale, select, ua {ua} en {en} other {Unknown}}"
+  }
+}
