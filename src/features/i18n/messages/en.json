@@ -1,0 +1,9 @@
+{
+  "Home": {
+    "title": "Discover the beauty of Ukraine"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, ua {ua} en {en} other {Unknown}}"
+  }
+}
