@@ -8,9 +8,9 @@ const HelpPage = () => {
               Help & Support
             </h1>
             <p className="text-xl text-[#010D3E] tracking-tight mt-6">
-              Welcome to the Help Page of Special Project! We're here to assist
-              you with any questions or concerns you may have regarding your
-              hiking adventures in Ukraine.
+              Welcome to the Help Page of Special Project! We&#39;re here to
+              assist you with any questions or concerns you may have regarding
+              your hiking adventures in Ukraine.
             </p>
 
             <h2 className="text-3xl font-bold mt-8">
