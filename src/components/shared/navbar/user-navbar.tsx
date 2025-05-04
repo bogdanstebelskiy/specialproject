@@ -17,7 +17,7 @@ export async function UserNavbar() {
         <div className="section-container">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-x-10">
-              <Link href="/public" locale={locale}>
+              <Link href="/" locale={locale}>
                 <Logo height={60} width={60} />
               </Link>
             </div>
