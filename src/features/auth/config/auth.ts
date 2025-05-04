@@ -3,7 +3,7 @@ import { PrismaAdapter } from '@auth/prisma-adapter'
 
 import { getUserById } from '../lib/user'
 import { db } from '@/lib/db'
-import authConfig from './auth.config'
+import authOptions from './auth.config'
 import { getTwoFactorConfirmationByUserId } from '../lib/two-factor-confirmation'
 import { getAccountByUserId } from '../lib/account'
 
@@ -90,5 +90,5 @@ export const {
   },
   adapter: PrismaAdapter(db),
   session: { strategy: 'jwt' },
-  ...authConfig,
+  ...authOptions,
 })
