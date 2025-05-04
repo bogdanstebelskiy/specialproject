@@ -5,6 +5,9 @@ import { notFound } from 'next/navigation'
 import { routing } from '@/i18n/routing'
 import React from 'react'
 import { hasLocale, NextIntlClientProvider } from 'next-intl'
+import { UserNavbar } from '@/components/shared/navbar/user-navbar'
+import { auth } from '@/features/auth/config/auth'
+import { SessionProvider } from 'next-auth/react'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -33,14 +36,21 @@ export default async function RootLayout({
     notFound()
   }
 
+  const session = await auth()
+
   return (
     <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider>
-          <div>{children}</div>
-        </NextIntlClientProvider>
+        <SessionProvider session={session}>
+          <NextIntlClientProvider>
+            <div>
+              <UserNavbar />
+              <div className="flex justify-center items-center">{children}</div>
+            </div>
+          </NextIntlClientProvider>
+        </SessionProvider>
       </body>
     </html>
   )
