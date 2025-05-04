@@ -47,7 +47,7 @@ export default async function RootLayout({
           <NextIntlClientProvider>
             <div>
               <UserNavbar />
-              <div className="flex justify-center items-center">{children}</div>
+              {children}
             </div>
           </NextIntlClientProvider>
         </SessionProvider>
