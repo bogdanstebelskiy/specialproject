@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form'
 import { useState, useTransition } from 'react'
 import { zodResolver } from '@hookform/resolvers/zod'
 
-import { ResetSchema } from '@/schemas'
+import { ResetSchema } from '../../schemas'
 import { Input } from '@/components/ui/input'
 import {
   Form,
@@ -20,7 +20,7 @@ import { CardWrapper } from '../card-wrapper'
 import { Button } from '@/components/ui/button'
 import { FormError } from '../form-error'
 import { FormSuccess } from '../form-success'
-import { reset } from '@/actions/reset'
+import { reset } from '../../actions/reset'
 
 export const ResetForm = () => {
   const [error, setError] = useState<string | undefined>('')
