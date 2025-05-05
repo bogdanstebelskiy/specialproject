@@ -8,6 +8,7 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl'
 import { UserNavbar } from '@/components/shared/navbar/user-navbar'
 import { auth } from '@/features/auth/config/auth'
 import { SessionProvider } from 'next-auth/react'
+import { NuqsAdapter } from 'nuqs/adapters/next'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -43,14 +44,16 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SessionProvider session={session}>
-          <NextIntlClientProvider>
-            <div>
-              <UserNavbar />
-              {children}
-            </div>
-          </NextIntlClientProvider>
-        </SessionProvider>
+        <NuqsAdapter>
+          <SessionProvider session={session}>
+            <NextIntlClientProvider>
+              <div>
+                <UserNavbar />
+                {children}
+              </div>
+            </NextIntlClientProvider>
+          </SessionProvider>
+        </NuqsAdapter>
       </body>
     </html>
   )
