@@ -11,6 +11,7 @@ import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 import { Badge } from '@/components/ui/badge'
 import { Tour /*Difficulty*/ } from '@prisma/client'
+import { formatCurrency } from '@/lib/formatters'
 
 /*type TourCardProps = {
   id: string;
@@ -61,7 +62,7 @@ export function TourCard({
         <CardTitle className="text-base md:text-2xl">
           <Link href={`/tours/${id}/book`}>{name}</Link>
         </CardTitle>
-        <CardDescription>{price} UAH</CardDescription>
+        <CardDescription>{formatCurrency((price || 0) / 100)}</CardDescription>
       </CardHeader>
       <CardContent className="text-sm md:text-base flex-grow">
         <p className="line-clamp-4">{description}</p>
